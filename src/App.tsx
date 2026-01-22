@@ -1,41 +1,79 @@
+type MenuItem = {
+  id: number;
+  label: string;
+  link: string;
+};
 
+const menuItems: MenuItem[] = [
+  { id: 1, label: "Maison", link: "/" },
+  { id: 2, label: "À propos", link: "/about" },
+  { id: 3, label: "Service", link: "/service" },
+  { id: 4, label: "Contact", link: "/contact" },
+];
 
 function App() {
   https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css
 
   return (
     
-  <div className=" ">
+  // <div className=" ">
       
-         <div
-  className="min-h-screen bg-cover bg-center"
-  style={{ backgroundImage: "url('/image11.jpg')" }}
->
+//          <div
+//   className="min-h-screen bg-cover bg-center"
+//   style={{ backgroundImage: "url('/image11.jpg')" }}
+// >
   
-  <div className="fixed top-3 left-0 w-full px-6">
-    <div className="grid grid-cols-2 items-center">
+//   <div className="fixed top-3 left-0 w-full px-6 max-w-[70vw] mx-auto">
+//     <div className="grid grid-cols-2 items-center">
 
-        <div className="flex items-center gap-3">
-        <img
-          src="/logo-white.svg"
-          className="w-16 h-16"
-          alt="logo"
-        />
+//         <div className="flex items-center gap-3">
+//         <img
+//           src="/logo-white.svg"
+//           className="w-16 h-16"
+//           alt="logo"
+//         />
+//       </div>
+        <div
+      className="min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/image11.jpg')" }}
+    >
+      <div className="fixed top-3 left-0 w-full px-6 max-w-[70vw] mx-auto">
+        <div className="grid grid-cols-2 items-center">
+
+          {/* LOGO */}
+          <img src="/logo-white.svg" className="w-16 h-16" alt="logo" />
+
+          {/* MENU */}
+          <ul className="hidden md:flex justify-end gap-5 text-white">
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <a href={item.link} className="hover:underline">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+        </div>
       </div>
+    </div>
+ 
+
 
      
-      <div className="hidden md:flex items-center justify-end gap-5 text-white">
-        <ul className="flex gap-5 text-md">
+      {/* <div className="hidden md:flex items-center justify-end gap-5 text-white"> */}
+        {/* <ul className="flex gap-5 text-md">
           <li><a href="#" className="hover:underline">Maison</a></li>
           <li><a href="#" className="hover:underline">À propos</a></li>
           <li><a href="#" className="hover:underline">Service</a></li>
           <li><a href="#" className="hover:underline">Contact</a></li>
-        </ul>
+        </ul> */}
+        
 
         <button className="inline-flex border border-white rounded-md px-9 py-3 text-md hover:underline">
           202-555-0188
         </button>
-      </div>
+      {/* </div> */}
 
       
       <div className="flex justify-end md:hidden">
@@ -44,8 +82,8 @@ function App() {
         </button>
       </div>
 
-    </div>
-  </div>
+    // </div>
+  {/* </div> */}
 
  
   <div className="w-full h-screen flex items-center justify-center text-white text-center">
@@ -67,7 +105,7 @@ function App() {
       </div>
     </div>
   </div>
-</div>
+// </div>
           {/* partie2 */}
 
          <div>
@@ -208,7 +246,7 @@ Mettez l'accent sur la manière dont vous <br /> pouvez aider
 
 
 
-        </div>
+      
 
 
 
